@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Registration Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel: Account Registration Requests</h1>
+
+        <table id="registrationTable">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>User Information</h2>
+            <p id="userInfo"></p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Example user data
+    const users = [
+        {
+            email: 'user1@example.com',
+            username: 'user1',
+            type: 'youth',
+            firstname: 'John',
+            middlename: 'A',
+            lastname: 'Doe',
+            address: '123 Main St',
+            gender: 'male',
+            status: 'single',
+            birthdate: '2000-01-01',
+            age: 24
+        },
+        {
+            email: 'user2@example.com',
+            username: 'user2',
+            type: 'barangayofficial',
+            firstname: 'Jane',
+            middlename: 'B',
+            lastname: 'Smith',
+            address: '456 Elm St',
+            gender: 'female',
+            status: 'married',
+            birthdate: '1995-05-15',
+            age: 29
+        }
+    ];
+
+    const tableBody = document.querySelector('#registrationTable tbody');
+    
+    users.forEach(user => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td>
+                <button onclick="acceptRegistration(event)">Accept</button>
+                <button onclick="rejectRegistration(event)">Reject</button>
+            </td>
+        `;
+        newRow.addEventListener('click', () => showModal(user));
+        tableBody.appendChild(newRow);
+    });
+});
+
+function calculateAge(birthdate) {
+    const birthDate = new Date(birthdate);
+    const diff = Date.now() - birthDate.getTime();
+    const ageDate = new Date(diff);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+function showModal(userInfo) {
+    const modal = document.getElementById('infoModal');
+    const userInfoContainer = document.getElementById('userInfo');
+    userInfoContainer.innerHTML = `
+        <strong>Username:</strong> ${userInfo.username}<br>
+        <strong>Email:</strong> ${userInfo.email}<br>
+        <strong>Type:</strong> ${userInfo.type}<br>
+        <strong>Full Name:</strong> ${userInfo.firstname} ${userInfo.middlename} ${userInfo.lastname}<br>
+        <strong>Address:</strong> ${userInfo.address}<br>
+        <strong>Gender:</strong> ${userInfo.gender}<br>
+        <strong>Status:</strong> ${userInfo.status}<br>
+        <strong>Birthdate:</strong> ${userInfo.birthdate}<br>
+        <strong>Age:</strong> ${userInfo.age}<br>
+    `;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById('infoModal');
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('infoModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function acceptRegistration(event) {
+    event.stopPropagation();
+    alert('Registration accepted');
+}
+
+function rejectRegistration(event) {
+    event.stopPropagation();
+    alert('Registration rejected');
+}
+
+    </script>
+   
+</body>
+</html>

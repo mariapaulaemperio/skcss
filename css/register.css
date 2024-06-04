@@ -1,0 +1,224 @@
+/* Register Modal specific styles */
+#registerModal .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 40px;
+    padding: 80px;
+    border: 0;
+    width: 60%;
+    height: 515px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#registerModal .modal-content::-webkit-scrollbar {
+    width: 0;
+}
+
+#registerModal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #224951;
+}
+
+#registerModal .close:hover {
+    color: #999;
+}
+
+#registerModal h2 {
+    text-align: center;
+    margin-top: -3px;
+    margin-bottom: 40px;
+    color: #224951;
+}
+
+#registerModal h4 {
+    text-align: center;
+    color: #224951;
+    opacity: 0.9;
+    padding: 2px;
+}
+
+#registerModal input {
+    display: block;
+    border: 1px solid #99d9c9;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto; /* Adjusted margin */
+    border-radius: 5px;
+}
+
+#registerModal .input-row {
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+}
+
+#registerModal .input {
+    margin-right: 10px;
+}
+
+#registerModal label {
+    color: #555;
+    font-size: 16px;
+    padding-left: 15px; /* Adjusted padding */
+    padding-top: 10px;
+    padding-bottom: -2px;
+}
+
+#registerModal button {
+    background: #224951;
+    padding: 10px;
+    color: #fff;
+    border-radius: 1px;
+    display: block;
+    margin-left: 12px;
+    width: 95%;
+    border: none;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+#registerModal button:hover {
+    background: white;
+    color: #224951;
+    border: 2px solid #224951;
+    cursor: pointer;
+}
+
+#registerModal .dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 9px;
+    padding-left: 16px;
+    border: 1px solid #99d9c9;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    width: 70px;
+    height: 35px;
+    color: #224951;
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+#registerModal .dropdown::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #224951;
+    pointer-events: none;
+}
+
+#registerModal .dropdown:hover {
+    border-color: #224951;
+}
+
+#registerModal .dropdown:focus {
+    outline: none;
+    border-color: #224951;
+}
+
+#registerModal .dropdown option {
+    background-color: #fff;
+    color: #224951;
+    font-size: 13px;
+}
+
+#registerModal .pi {
+    font-size: 20px;
+    padding-left: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: black;
+    opacity: 0.8;
+}
+
+#registerModal .login1 {
+    text-align: center;
+    color: black;
+    opacity: 0.9;
+    font-size: small;
+}
+
+#registerModal .login {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+#registerModal input[type="date"] {
+    background-color: white;
+    padding: 15px;
+    width: 42%;
+    height: 10%;
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: gray;
+    font-size: 13px;
+    border: 1px solid #99d9c9;
+    outline: none;
+    border-radius: 5px;
+}
+
+#registerModal input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#registerModal input[type="number"] {
+    background-color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #99d9c9;
+    border-radius: 5px;
+    width: 42%;
+    height: 10%;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+#registerModal input[type="number"][readonly] {
+    background-color: white;
+    cursor: not-allowed;
+}
+.modal-content {
+    background-color: #fefefe;
+    padding: 40PX;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.8);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}

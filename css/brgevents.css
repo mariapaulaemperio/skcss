@@ -1,0 +1,272 @@
+:root {
+  --main-bg-color: #224951;
+  --main-text-color: #224951;
+  --second-text-color: #bbbec5;
+  --second-bg-color: #c1efde;
+}
+
+.primary-text {
+  color: var(--main-text-color);
+}
+
+.second-text {
+  color: var(--second-text-color);
+}
+
+.primary-bg {
+  background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+  background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+#w {
+  display: flex;
+  height: 100%;
+  overflow-x: hidden;
+  background-image: linear-gradient(to right, #a5cac0, #a5cac0);
+}
+
+#sw {
+  min-width: 250px;
+  max-width: 250px;
+  height: 100%;
+  position: fixed;
+  overflow-y: auto;
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#sw .hs {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sw .list-group {
+  width: 15rem;
+}
+.list-group a{
+  margin-bottom: 10px;
+}
+.list-group a:hover {
+  color: #007bff; /* Change text color */
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a shadow to the text */
+  transition: all 0.3s ease-in-out; /* Smooth transition for all effects */
+}
+
+
+#page-content-wrapper {
+  margin-left: 250px;
+  height: 599px;
+  overflow-y: auto;
+  width: 100%;
+  padding: 20px;
+  background-image: linear-gradient(to right,#5de0e6, #004aad);
+}
+
+#w.toggled #sw {
+  margin-left: 0;
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
+
+.list-group-item {
+  border: none;
+  padding: 20px 30px;
+  font-weight: bold;
+}
+
+ .list-group-item.ac {
+    color: rgba(128, 128, 128, 0.5); /* 50% transparent gray */
+   
+  }
+
+  @media (min-width: 768px) {
+    #sw {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+      height: 100vh; /* Set height to 100% of the viewport height */
+      overflow-y: auto; /* Add vertical scrolling if content overflows */
+    }
+  
+    #w.toggled #sw {
+      margin-left: -15rem;
+    }
+  }
+  
+
+@media (max-width: 767px) {
+  #sw {
+      margin-left: -15rem;
+  }
+
+  #w.toggled #sw {
+      margin-left: 0;
+  }
+
+  #page-content-wrapper {
+      margin-left: 0;
+  }
+  button.navbar-toggler {
+    margin-right: -30px; /* Adjust the margin for the toggler button */
+  }
+  
+}
+
+.small-image {
+  width: 40px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 50%;
+  margin-top: -8px;
+}
+
+.inline-text {
+  display: inline-block;
+  margin-left: 10px; /* Optional: adds some space between the image and the text */
+}
+
+.mb-4 {
+  margin-bottom: 0.5rem; /* Adjust spacing between rows as needed */
+}
+
+.filter-container select {
+  margin-right: 10px;
+}
+h2 {
+  margin-top: 20px;
+}
+.filter-container {
+ margin-top: -45px;
+}
+.filter-container select {
+  margin-top: -90px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 40px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+td {
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+}
+.record-header {
+  position: sticky;
+    top: 0;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#a3bcdc; /* Optional: Add background color for better visibility */
+    z-index: 10; /* Optional: Adjust z-index as needed */
+}
+.table-container {
+  max-height: 350px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+
+/* Ensure the table takes full width within its container */
+.table-container table {
+  width: 100%;
+}
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+button.btn {
+  margin-top: -20px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #a3bcdc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button.btn:hover {
+  background-color: white;
+  color: black;
+}
+.exist{
+  background-color: whitesmoke;
+  padding-top: 15px;
+}
+.label{
+  color: white;
+}
+.label{
+  margin-left: -10px;
+}
+.g-3{
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
