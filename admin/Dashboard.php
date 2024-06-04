@@ -124,8 +124,15 @@
                 </thead>
                 <tbody id="tableBody">
                     <!-- Data rows will be added dynamically using JavaScript -->
+                    <?php 
+                    include '../db.php';
+                    $req = $db->selectWithWhere('requesteddocuments','*','');
+                    foreach($req as $s)
+                    {
+                        
+                    ?>
                         <tr>
-                            <td>#5033</td>
+                            <td>#<?php echo $s['ID'] ?></td>
                             <td>
                                 <input type="file" class="file_input" name="files[]" multiple required>
                             </td>
@@ -133,12 +140,12 @@
                                 <div class="client">
                                    <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
                                     <div class="client-info">
-                                        <h4>Andrew Bruno</h4>
+                                        <h4><?php echo $s['Purpose'] ?></h4>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                hvhchahahcacbadbchabjhh
+                            <?php echo $s['RequestDate'] ?>
                             </td>
                             <td>
                                 <div class="actions">
@@ -146,6 +153,7 @@
                                 </div>
                             </td>
                         </tr>
+                        <?php } ?>
                 </tbody>
             </table>
         </div>
