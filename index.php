@@ -14,6 +14,125 @@
     font-size: 16px;
     color: black;
   }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.divide {
+    height: 60px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.nav-bar1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping of nav items */
+}
+
+.nav-bar1 li {
+    margin-top: 15px;
+    display: inline;
+}
+
+.nav-bar1 a {
+    display: block;
+    color: gray;
+    font-weight: bolder;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.nav-bar1 a:hover {
+    background-color: white;
+    color: #1b9bff;
+}
+
+.cta-button {
+   
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .nav-bar1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar1 li {
+        margin-top: 10px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar1 a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cta-button {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-bar1 a {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .cta-button {
+        font-size: 12px;
+        padding: 10px 14px;
+    }
+}
+.hd{
+    height: 500px; 
+    margin-left:130px; 
+    margin-top:70px;
+}
+.hd p{
+   font-size: 1.2rem;
+  
+}
+.white{
+    margin-top: 35px;
+    margin-left: 560px;
+	border: 1px solid;
+	height: 230px;
+	width: 510px;
+}
+
     </style>
     
     
@@ -31,33 +150,57 @@
         </label>
 
      <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page"href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">More</a>
-            </li>
+           
             <li><button id="loginBtn" class="buttonr" style="width: 100px;">Log In</button></li>
           </ul>
     </nav>
 
     <section id="hero-section">
-        <div class="button-wrapper">
-            
-            <a id="registerBtn" href="landing/register.php" class="buttonr" style="width: 150px;">Register</a>
-        </div>
+       
         <div class="slider">
             
             <div class="slide active">
                 <img src="image/m.jpg" alt="Slide 1">
+                <div class="button-wrapper">
+            
+            <a id="registerBtn" href="landing/register.php" class="buttonr" style="width: 150px;">Register</a>
+        </div>
             </div>
         </div>
         <button class="slider-prev">&lt;</button>
         <button class="slider-next">&gt;</button>
     </section>
+
+
+
+    <div class="divide">
+        <ul class="nav-bar1">
+           
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#why-join-us">Why Join Us</a></li>
+            <li><a href="#team">Meet Our Team</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            
+        </ul>
+    </div>
+    <div class=" hd">
+    <p style="font-weight: bold;">Welcome to Sanguniang Kabataan Connect Sphere</p>
+    <p> the Youth, Connecting the Future</p>
+
+    <h5>About Us</h5>
+    <p> Sanguniang Kabataan Connect Sphere System is a pioneering platform <br>designed to foster active youth participation,
+         streamline communication,<br> and enhance community engagement. Our mission is to empower <br> the youth by providing a robust,
+          user-friendly system <br>that connects young leaders and community members.</p>
+
+    <div class="white">
+
+    </div>
+      
+    </div>
+    <div>
+      
+    </div>
 
 
     <footer>
