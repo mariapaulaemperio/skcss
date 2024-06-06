@@ -104,3 +104,8 @@ nextBtn.addEventListener('click', () => {
                 window.location.href = './landing/register.php';
             });
         });
+
+
+
+
+        

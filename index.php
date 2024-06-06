@@ -22,35 +22,12 @@
 }
 
 .divide {
-    height: 60px;
+    margin-top: 75px;
+    height: 55px;
     background-color: white;
     overflow: hidden;
+    position: relative;
 }
-
-
-.nav-bar1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Allows wrapping of nav items */
-}
-
-.nav-bar1 li {
-    margin-top: 15px;
-    display: inline;
-}
-
-.nav-bar1 a {
-    display: block;
-    color: gray;
-    font-weight: bolder;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-}
-
 .nav-bar1 a:hover {
     background-color: white;
     color: #1b9bff;
@@ -118,7 +95,7 @@
 }
 .hd{
     height: 500px; 
-    margin-left:130px; 
+    margin-left:200px; 
     margin-top:70px;
 }
 .hd p{
@@ -132,14 +109,141 @@
 	height: 230px;
 	width: 510px;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
 
+.nav-bar1 {
+    display: flex;
+    list-style: none;
+    background-color: rgba(255, 68, 25, 0.4);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar1 li {
+    flex: 1;
+}
+
+.nav-bar1 a {
+    display: block;
+    padding: 14px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav-bar1 a:hover,
+.nav-bar1 .active a {
+    background-color: white;
+    color: black;
+}
+
+.content-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%; /* 5 sections, each 100% */
+    height: auto; /* Adjust height based on content */
+}
+.content-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%; /* 5 sections, each 100% */
+    height: auto; /* Adjust height based on content */
+}
+
+.content {
+    min-width: 100vw;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hd {
+    padding: 20px;
+    text-align: center;
+}
+.accordion {
+      background-color: white;
+      color: #333;
+      cursor: pointer;
+      padding: 18px;
+      width: 50%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      transition: 0.4s;
+      border-radius: 5px;
+      margin-bottom: 1px;
+      border-bottom: 2px solid bisque;
+    
+    }
+    .accordion:hover {
+      background-color: #ddd;
+    }
+    .panel {
+      padding: 0 18px;
+      background-color: transparent;
+      max-height: 0;
+      width: 50%;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      text-align: justify;
+    }
+    .active {
+        background-color: white;
+    }
+    .fa-chevron-down {
+  transition: transform 0.3s ease-in-out;
+  margin-left: 95%;
+}
+
+.active .fa-chevron-down {
+  transform: rotate(180deg);
+}
+.accordion i {
+  order: 1; /* Set the order of the icon to 1 */
+}
+.r{
+    position: relative;
+    margin-left: 52%;
+
+}
+.r h4{
+    position: absolute;
+   margin-top: 20px;
+}
+.r p{
+    position: absolute;
+   margin-top: 70px;
+}
+.r #registerBtn{
+    position: absolute;
+    margin-top: 200px;
+    text-align: center;
+    padding: 10px;
+}
+.buttonrm {
+	color: black;
+    background-color: white;
+	font-size: 17px;
+	padding: 7px 20px;
+	width: auto;
+	border-radius: 3px;
+	position: relative;
+	text-transform: uppercase;
+   border: none;
+}
     </style>
     
     
 </head>
 <body>
     
-    <nav>
+<nav id="nav">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars" style="font-size:24px"></i>
@@ -149,10 +253,12 @@
             <span>SKCSS</span>
         </label>
 
-     <ul class="nav justify-content-end">
+        <ul class="m">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="#content-container">About</a></li>
+            <li><button id="loginBtn" class="buttonrm" style="width: 100px;">Log In</button></li>
            
-            <li><button id="loginBtn" class="buttonr" style="width: 100px;">Log In</button></li>
-          </ul>
+        </ul>
     </nav>
 
     <section id="hero-section">
@@ -160,49 +266,109 @@
         <div class="slider">
             
             <div class="slide active">
-                <img src="image/m.jpg" alt="Slide 1">
+                <img src="image/m.jpg" >
                 <div class="button-wrapper">
-            
-            <a id="registerBtn" href="landing/register.php" class="buttonr" style="width: 150px;">Register</a>
-        </div>
+                <a id="registerBtn" href="landing/register.php" class="buttonr" style="width: 150px;">Register</a>
+                </div>
             </div>
         </div>
-        <button class="slider-prev">&lt;</button>
-        <button class="slider-next">&gt;</button>
     </section>
 
 
 
-    <div class="divide">
+    <div class="divide" id="content-container">
         <ul class="nav-bar1">
-           
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#why-join-us">Why Join Us</a></li>
             <li><a href="#team">Meet Our Team</a></li>
             <li><a href="#faq">FAQs</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            
         </ul>
     </div>
-    <div class=" hd">
-    <p style="font-weight: bold;">Welcome to Sanguniang Kabataan Connect Sphere</p>
-    <p> the Youth, Connecting the Future</p>
+    <div class="content-container" >
+        
+        <div id="how-it-works" class="content">
 
-    <h5>About Us</h5>
-    <p> Sanguniang Kabataan Connect Sphere System is a pioneering platform <br>designed to foster active youth participation,
-         streamline communication,<br> and enhance community engagement. Our mission is to empower <br> the youth by providing a robust,
-          user-friendly system <br>that connects young leaders and community members.</p>
+        <div class="r"> 
+        <h4>Welcome to SKCSS</h4>
+        <p style="text-align: justify; padding-right:50px;">your central hub for Sangguniang Kabataan events and announcements!
+         Stay tuned, and shape the future of our youth community. Let's create positive change together. <br> Join us now!</p>
 
-    <div class="white">
+         <a id="registerBtn" href="#nav" class="button" style="width: 150px;">Register Now</a>
+        </div>
 
+
+        <button class="accordion">Join the Movement<i class="fas fa-chevron-down"></i></button>
+       <div class="panel">
+         <p>Sign Up: Creating your account is a breeze! Use your email or social media to get started.</p><br>
+         <p>Verify: To ensure the integrity of our community, provide necessary personal information for admin verification. Once verified, you're ready to dive in!</p>
     </div>
-      
+
+        <button class="accordion">Dive into Your Dashboard <i class="fas fa-chevron-down"></i></button>
+        <div class="panel">
+         <p>Your Command Center: Your dashboard is your central hub, displaying updates, upcoming events, and more.</p><br>
+         <p>Stay Updated: Get real-time notifications about announcements to stay in the loop.</p>
     </div>
+
+<button class="accordion">Events & Activities<i class="fas fa-chevron-down"></i></button>
+<div class="panel">
+  <p>Stay on Track: Keep tabs on all SK events and activities in the events section.</p>
+    </div>
+        </div>
+        <div id="why-join-us" class="content">
+            <h2>Why Join Us</h2>
+            <p>Content for Why Join Us...</p>
+        </div>
+        <div id="team" class="content">
+            <h2>Meet Our Team</h2>
+            <p>Content for Meet Our Team...</p>
+        </div>
+        <div id="faq" class="content">
+            <h2>FAQs</h2>
+            <p>Content for FAQs...</p>
+        </div>
+        <div id="contact" class="content">
+            <h2>Contact Us</h2>
+            <p>Content for Contact Us...</p>
+        </div>
+    </div>
+   
     <div>
       
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <footer>
         <div class="footerContainer">
             <div class="socialIcons">
@@ -214,7 +380,7 @@
             <div class="footerNav">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="">About</a></li>
+                    <li><a href="#content-container">About</a></li>
                     <li><a href="">Contact Us</a></li>
                     <li><a href="">Our Team</a></li>
                 </ul>
@@ -224,6 +390,44 @@
             <p>Copyright &copy;2024; Youth Organization · website · Designed by <span class="designer">L.L</span></p>
         </div>
     </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Log In Modal -->
     <div id="loginModal" class="modal" style="display: none;">
@@ -327,5 +531,7 @@
     </div>
 
      <script src="script.js"></script>
+     <script src="sc.js"></script>
+    
 </body>
 </html>
