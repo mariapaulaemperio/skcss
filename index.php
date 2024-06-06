@@ -54,21 +54,28 @@
 }
 
 /* Media Queries for Responsiveness */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 480px) {
     .nav-bar1 {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Display items vertically */
+        align-items: center; /* Center-align items */
     }
 
     .nav-bar1 li {
-        margin-top: 10px;
+        margin-top: 10px; /* Add spacing between items */
+        flex: auto; /* Allow items to take up full width */
+    }
+
+    .nav-bar1 a {
+        padding: 10px; /* Increase padding for better touch responsiveness */
+        font-size: 14px; /* Decrease font size for better fit */
     }
 
     .cta-button {
-        width: 100%;
-        text-align: center;
+        font-size: 14px; /* Adjust font size of cta-button */
+        padding: 12px 16px; /* Adjust padding for cta-button */
     }
 }
+
 
 @media screen and (max-width: 768px) {
     .nav-bar1 a {
@@ -117,6 +124,7 @@ body {
 
 .nav-bar1 {
     display: flex;
+    position: sticky;
     list-style: none;
     background-color: rgba(255, 68, 25, 0.4);
     padding: 0;
@@ -222,8 +230,8 @@ body {
 }
 .r #registerBtn{
     position: absolute;
-    margin-top: 200px;
-    text-align: center;
+    margin-top: 220px;
+    text-align: left;
     padding: 10px;
 }
 .buttonrm {
@@ -237,6 +245,7 @@ body {
 	text-transform: uppercase;
    border: none;
 }
+
     </style>
     
     
@@ -256,9 +265,10 @@ body {
         <ul class="m">
             <li><a href="index.php">Home</a></li>
             <li><a href="#content-container">About</a></li>
-            <li><button id="loginBtn" class="buttonrm" style="width: 100px;">Log In</button></li>
+            <li><button id="loginBtn" class="buttonr" style="width: 100px;">Log In</button></li>
            
-        </ul>
+             
+            </ul>
     </nav>
 
     <section id="hero-section">
@@ -269,6 +279,7 @@ body {
                 <img src="image/m.jpg" >
                 <div class="button-wrapper">
                 <a id="registerBtn" href="landing/register.php" class="buttonr" style="width: 150px;">Register</a>
+
                 </div>
             </div>
         </div>

@@ -51,12 +51,65 @@ padding: 7px 13px;
 border-radius: 3px;
 text-transform: uppercase;
 }
-a.active,a:hover{
-	background: #1b9bff;
-	transition: .5s;
-
-
+a:hover::before,
+a.active::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0082e6;
+    transition: width 0.3s ease;
 }
+
+a:hover::before {
+    width: 100%;
+}
+
+a {
+    position: relative; /* Ensure the ::before pseudo-element is positioned relative to the link */
+}
+
+/* Resetting background for hover and active states */
+a:hover,
+a.active {
+    background: none;
+    color: #0082e6;
+}
+
+
+
+
+
+
+.buttonrm:hover::before,
+.buttonrm.active::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0082e6;
+    transition: width 0.3s ease;
+}
+
+.buttonrm:hover::before {
+    width: 100%;
+}
+
+.buttonrm {
+    position: relative; /* Ensure the ::before pseudo-element is positioned relative to the link */
+}
+
+/* Resetting background for hover and active states */
+.buttonrm:hover,
+.buttonrm.active {
+    background: none;
+    color: #0082e6;
+}
+
 .checkbtn{
 	font-size: 30px;
 	color: black;
@@ -106,7 +159,7 @@ a.active,a:hover{
 	}
 	a:hover,a.active{
 		background: none;
-		color: #0082e6;
+		
 	}
 	#check:checked ~ ul{
 		left: 0;

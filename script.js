@@ -101,7 +101,7 @@ nextBtn.addEventListener('click', () => {
             // Add a click event listener to the button
             registerBtn.addEventListener('click', function() {
                 // Navigate to register.php
-                window.location.href = './landing/register.php';
+                window.location.href = '../register.php';
             });
         });
 
