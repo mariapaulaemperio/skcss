@@ -126,13 +126,14 @@ body {
     display: flex;
     position: sticky;
     list-style: none;
-    background-color: rgba(255, 68, 25, 0.4);
+    background-image: linear-gradient(to right,#5de0e6, #004aad);
     padding: 0;
     margin: 0;
 }
 
 .nav-bar1 li {
     flex: 1;
+    
 }
 
 .nav-bar1 a {
@@ -152,13 +153,7 @@ body {
 .content-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 500%; /* 5 sections, each 100% */
-    height: auto; /* Adjust height based on content */
-}
-.content-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 500%; /* 5 sections, each 100% */
+    width: 200%; /* 5 sections, each 100% */
     height: auto; /* Adjust height based on content */
 }
 
@@ -246,6 +241,95 @@ body {
    border: none;
 }
 
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+
+.contact-item h2 {
+    color: #333;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 5px;
+}
+
+.contact-item p {
+    margin: 10px 0;
+}
+
+.office-location {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.office-hours, .location {
+    flex: 1 1 45%;
+    margin: 10px;
+}
+
+.office-hours h2, .location h2 {
+    color: #333;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 5px;
+}
+
+.office-hours ul {
+    list-style: none;
+    padding: 0;
+}
+
+.office-hours ul li {
+    margin: 5px 0;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Ensure office hours and location are on the same line */
+@media (min-width: 600px) {
+    .office-location {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .office-hours, .location {
+        flex: 1;
+        margin: 10px;
+    }
+    .content-slide {
+        flex-direction: column;
+        width: 100%;
+    }
+     .how-it-works-container {
+        padding: 0 10px; /* Adjust horizontal padding */
+    }
+    
+}
+
+
+
     </style>
     
     
@@ -290,9 +374,6 @@ body {
     <div class="divide" id="content-container">
         <ul class="nav-bar1">
             <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#why-join-us">Why Join Us</a></li>
-            <li><a href="#team">Meet Our Team</a></li>
-            <li><a href="#faq">FAQs</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </div>
@@ -326,21 +407,44 @@ body {
   <p>Stay on Track: Keep tabs on all SK events and activities in the events section.</p>
     </div>
         </div>
-        <div id="why-join-us" class="content">
-            <h2>Why Join Us</h2>
-            <p>Content for Why Join Us...</p>
-        </div>
-        <div id="team" class="content">
-            <h2>Meet Our Team</h2>
-            <p>Content for Meet Our Team...</p>
-        </div>
-        <div id="faq" class="content">
-            <h2>FAQs</h2>
-            <p>Content for FAQs...</p>
-        </div>
         <div id="contact" class="content">
             <h2>Contact Us</h2>
-            <p>Content for Contact Us...</p>
+            <p>We are here to assist you! For any questions, technical support, or feedback, please reach out to us through the following channels:</p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <h2>Phone</h2>
+                <p>📞 <strong>Contact Number:</strong> (123) 456-7890</p>
+            </div>
+
+            <div class="contact-item">
+                <h2>Email</h2>
+                <p>📧 <strong>Email:</strong> <a href="mailto:support@sksphere.com">support@sksphere.com</a></p>
+            </div>
+
+            <div class="contact-item">
+                <h2>Facebook</h2>
+                <p>👍 <strong>Facebook Page:</strong> <a href="https://www.facebook.com/SKSphereSystem" target="_blank">Sanguniang Kabataan Sphere System</a></p>
+            </div>
+        </div>
+
+        <div class="office-hours">
+            <h2>Office Hours</h2>
+            <p>Our support team is available during the following hours:</p>
+            <ul>
+                <li><strong>Monday to Friday:</strong> 9:00 AM - 6:00 PM</li>
+                <li><strong>Saturday:</strong> 10:00 AM - 2:00 PM</li>
+                <li><strong>Sunday:</strong> Closed</li>
+            </ul>
+        </div>
+
+        <div class="location">
+            <h2>Location</h2>
+            <p>🏢 <strong>Office Address:</strong><br>
+            Sanguniang Kabataan Sphere System<br>
+            1234 Youth Avenue, Barangay Hall<br>
+            City, Province, ZIP Code</p>
+        </div>
         </div>
     </div>
    
@@ -382,19 +486,13 @@ body {
     
     <footer>
         <div class="footerContainer">
-            <div class="socialIcons">
-                <a href="https://web.facebook.com/profile.php?id=61554482426104&sk=about"><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-            </div>
+          
             <div class="footerNav">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#content-container">About</a></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">Our Team</a></li>
-                </ul>
+            <ul class="navigation">
+    <li><a href="https://www.facebook.com/search/top/?q=UPPER%20LANGCANGAN%20SK"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+    <li><a href="#content-container"><i class="fas fa-envelope"></i> Email</a></li>
+    <li><a href="tel:09-103-99215"><i class="fas fa-phone"></i> 09-103-99215</a></li>
+</ul>
             </div>
         </div>
         <div class="footerBottom">
